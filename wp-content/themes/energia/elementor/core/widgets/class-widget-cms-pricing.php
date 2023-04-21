@@ -1,0 +1,11 @@
+<?php
+
+class ETC_CmsPricing_Widget extends Elementor_Theme_Core_Widget_Base{
+    protected $name = 'cms_pricing';
+    protected $title = 'Pricing';
+    protected $icon = 'eicon-editor-list-ul';
+    protected $categories = array( 'elementor-theme-core' );
+    protected $params = '{"sections":[{"name":"layout_section","label":"Layout","tab":"layout","controls":[{"name":"layout","label":"Templates","type":"layoutcontrol","default":"1","options":{"1":{"label":"Layout 1","image":"http:\/\/localhost\/larmak-april-2023\/wp-content\/themes\/energia\/elementor\/templates\/widgets\/cms_pricing\/layout-image\/layout1.jpg"}}}]},{"name":"section_list","label":"Content","tab":"content","controls":[{"name":"title","label":"Title","type":"text","placeholder":"Enter your title","label_block":true},{"name":"description","label":"Description","type":"textarea","placeholder":"Enter your description","rows":3,"show_label":false},{"name":"description2","label":"Description2","type":"textarea","placeholder":"Enter your description","rows":4,"show_label":false},{"name":"highlight","label":"Highlight","type":"switcher","default":"false"},{"name":"content_list","label":"Feature","type":"repeater","default":[],"controls":[{"name":"content","label":"Content","type":"text","label_block":true},{"name":"pricing_list_item_slashed","label":"Slashed","type":"switcher","description":"Item will invisible but keep height"}],"title_field":"{{{ content }}}"},{"name":"price","label":"Price","type":"text"},{"name":"time","label":"Time","type":"text"},{"name":"button_text","label":"Button Text","type":"text","default":""},{"name":"button_link","label":"Link","type":"url"}]},{"name":"section_style","label":"Style","tab":"style","controls":[{"name":"style","label":"Style","type":"select","options":{"style1":"Default","style2":"Primary"},"default":"style1"},{"name":"slashed_style","label":"Slashed Style","type":"select","options":{"sl-invisible":"Hidden","sl-slash":"Slash"},"default":"sl-invisible"}]}]}';
+    protected $styles = array(  );
+    protected $scripts = array(  );
+}

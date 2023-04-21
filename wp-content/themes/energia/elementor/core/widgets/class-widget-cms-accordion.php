@@ -1,0 +1,11 @@
+<?php
+
+class ETC_CmsAccordion_Widget extends Elementor_Theme_Core_Widget_Base{
+    protected $name = 'cms_accordion';
+    protected $title = 'Accordion';
+    protected $icon = 'eicon-accordion';
+    protected $categories = array( 'elementor-theme-core' );
+    protected $params = '{"sections":[{"name":"layout_section","label":"Layout","tab":"layout","controls":[{"name":"layout","label":"Templates","type":"layoutcontrol","default":"1","options":{"1":{"label":"Layout 1","image":"http:\/\/localhost\/larmak-april-2023\/wp-content\/themes\/energia\/elementor\/templates\/widgets\/cms_accordion\/layout-image\/layout1.jpg"}}}]},{"name":"source_section","label":"Source Settings","tab":"content","controls":[{"name":"style","label":"Style","type":"select","options":{"style1":"Style 1","style2":"Style 2","style3":"Style 3"},"default":"style1","separator":"after"},{"name":"active_section","label":"Active section","type":"number","separator":"after"},{"name":"cms_accordion","label":"Accordion Items","type":"repeater","default":[{"ac_title":"Accordion #1","ac_content":"Click edit button to change this text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo."},{"ac_title":"Accordion #2","ac_content":"Click edit button to change this text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo."}],"controls":[{"name":"ac_title","label":"Title","type":"text"},{"name":"ac_content_type","label":"Content Type","type":"select","default":"text_editor","options":{"text_editor":"Text Editor","template":"Template"}},{"name":"ac_content","label":"Content","type":"textarea","rows":10,"condition":{"ac_content_type":"text_editor"}},{"name":"ac_content_template","label":"Template","type":"select","default":"","options":{"":"Select Template","16984":"Default Kit","11759":"Default Kit","11758":"Default Kit"},"condition":{"ac_content_type":"template"}}],"title_field":"{{{ ac_title }}}","separator":"after"}]}]}';
+    protected $styles = array(  );
+    protected $scripts = array( 'cms-accordion-widget-js' );
+}
