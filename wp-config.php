@@ -21,13 +21,13 @@ define( 'WP_CACHE', true );
 
 // ** Database settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define( 'DB_NAME', 'u279553735_V6eZ4' );
+define( 'DB_NAME', 'u279553735_tando' );
 
 /** Database username */
-define( 'DB_USER', 'u279553735_XYzUS' );
+define( 'DB_USER', 'u279553735_tando' );
 
 /** Database password */
-define( 'DB_PASSWORD', '7t;@GO&Qc[' );
+define( 'DB_PASSWORD', '!i#Zj1dX' );
 
 /** Database hostname */
 define( 'DB_HOST', '127.0.0.1' );
