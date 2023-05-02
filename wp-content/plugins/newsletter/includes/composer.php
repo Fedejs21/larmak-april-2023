@@ -523,7 +523,7 @@ class TNP_Composer {
     static function post_content($post) {
         $content = $post->post_content;
         
-        if (!has_block($post)) {
+        if (function_exists('has_blocks') && !has_blocks($post)) {
             $content = wpautop($content);
         }
         

@@ -80,8 +80,9 @@ $tnp_wpdb = new TNP_WPDB(DB_USER, DB_PASSWORD, DB_NAME, DB_HOST);
 
 function tnp_describe_table($table) {
     global $wpdb;
-    $rs = $wpdb->get_results("show full columns from " . esc_sql($table));
+    $rs = $wpdb->get_results("show full columns from " . esc_sql($wpdb->prefix . $table));
     ?>
+<h4><?php echo esc_html($wpdb->prefix)?><?php echo esc_html($table)?></h4>
     <table class="tnp-db-table">
         <thead>
             <tr>
@@ -1309,7 +1310,7 @@ function tnp_describe_table($table) {
                                 <?php $this->condition_flag($condition) ?>
                             </td>
                             <td>
-                                <?php print_r($r) ?>
+                                <?php esc_html(print_r($r)) ?>
                             </td>
                         </tr>
                         <?php
@@ -1322,7 +1323,7 @@ function tnp_describe_table($table) {
                                 <?php $this->condition_flag($condition) ?>
                             </td>
                             <td>
-                                <?php print_r($r) ?>
+                                <?php esc_html(print_r($r)) ?>
                             </td>
                         </tr>
                         <?php
@@ -1335,7 +1336,7 @@ function tnp_describe_table($table) {
                                 <?php $this->condition_flag($condition) ?>
                             </td>
                             <td>
-                                <?php print_r($r) ?>
+                                <?php esc_html(print_r($r)) ?>
                             </td>
                         </tr>
                         <?php
@@ -1348,7 +1349,7 @@ function tnp_describe_table($table) {
                                 <?php $this->condition_flag($condition) ?>
                             </td>
                             <td>
-                                <?php print_r($r) ?>
+                                <?php esc_html(print_r($r)) ?>
                             </td>
                         </tr>
                         
@@ -1363,7 +1364,7 @@ function tnp_describe_table($table) {
                                 <?php $this->condition_flag($condition) ?>
                             </td>
                             <td>
-                                <?php print_r($r) ?>
+                                <?php esc_html(print_r($r)) ?>
                             </td>
                         </tr>
                         <?php } ?>
@@ -1379,7 +1380,7 @@ function tnp_describe_table($table) {
                                 <?php $this->condition_flag($condition) ?>
                             </td>
                             <td>
-                                <?php print_r($r) ?>
+                                <?php esc_html(print_r($r)) ?>
                             </td>
                         </tr>
                         <?php
@@ -1392,7 +1393,7 @@ function tnp_describe_table($table) {
                                 <?php $this->condition_flag($condition) ?>
                             </td>
                             <td>
-                                <?php print_r($r) ?>
+                                <?php esc_html(print_r($r)) ?>
                             </td>
                         </tr>
                         <?php } ?>
@@ -1400,29 +1401,10 @@ function tnp_describe_table($table) {
                 </table>
 
                 <h3>Database tables' structure</h3>
-                <h3>Database tables' status</h3>
-                <table class="widefat">
-                    <thead>
-                        <tr>
-                            <th>Table</th>
-                            <th>Structure</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><code><?php echo NEWSLETTER_USERS_TABLE ?></code></td>
-                            <td>
-                                <?php tnp_describe_table(NEWSLETTER_USERS_TABLE) ?>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><code><?php echo NEWSLETTER_EMAILS_TABLE ?></code></td>
-                            <td>
-                                <?php tnp_describe_table(NEWSLETTER_EMAILS_TABLE) ?>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+                <?php tnp_describe_table('newsletter') ?>
+                <?php tnp_describe_table('newsletter_emails') ?>
+                <?php tnp_describe_table('newsletter_sent') ?>
+                <?php tnp_describe_table('newsletter_stats') ?>
 
                 <h3>Update plugins data</h3>
                 <pre style="font-size: 11px; font-family: monospace; background-color: #efefef; color: #444"><?php echo esc_html(print_r(get_site_transient('update_plugins'), true)); ?></pre>
@@ -1430,7 +1412,7 @@ function tnp_describe_table($table) {
             <?php } else { ?>
 
                 <p>
-                    <a href="<?php echo esc_attr(add_query_arg('advanced', '1', $_SERVER['REQUEST_URI'])) ?>">Show advanced parameters</a>
+                    <a href="?page=newsletter_system_status&advanced=1">Show advanced parameters</a>
                 </p>    
             <?php } ?>
         </form>
