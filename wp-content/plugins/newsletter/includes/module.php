@@ -354,7 +354,7 @@ class TNP_User {
                 break;
             case self::STATUS_BOUNCED: return __('Bounced', 'newsletter');
                 break;
-            case self::STATUS_COMPLAINED: return __('Compained', 'newsletter');
+            case self::STATUS_COMPLAINED: return __('Complained', 'newsletter');
                 break;
             default:
                 return __('Unknown', 'newsletter');
